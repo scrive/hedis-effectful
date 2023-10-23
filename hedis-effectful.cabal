@@ -35,7 +35,6 @@ common language
     ConstraintKinds
     DataKinds
     FlexibleContexts
-    ImportQualifiedPost
     LambdaCase
     TypeFamilies
     TypeOperators

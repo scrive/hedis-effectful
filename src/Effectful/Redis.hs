@@ -11,7 +11,7 @@ module Effectful.Redis
   )
 where
 
-import Database.Redis qualified as R
+import qualified Database.Redis as R
 import Effectful
 import Effectful.Dispatch.Static
 
