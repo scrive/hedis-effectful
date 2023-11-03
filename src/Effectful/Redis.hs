@@ -29,7 +29,7 @@ runRedis = evalStaticRep . Redis
 ----------------------------------------
 -- Orphan instance
 
-instance (Redis :> es) => R.MonadRedis (Eff es) where
+instance (IOE :> es, Redis :> es) => R.MonadRedis (Eff es) where
   liftRedis redis = do
     Redis connection <- getStaticRep
-    unsafeEff_ $ R.runRedis connection redis
+    liftIO $ R.runRedis connection redis
