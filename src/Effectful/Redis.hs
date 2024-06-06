@@ -21,7 +21,7 @@ data Redis :: Effect where
 
 type instance DispatchOf Redis = Dynamic
 
--- | Run the redis effect.
+-- | Run the 'Redis' effect.
 runRedis :: IOE :> es => R.Connection -> Eff (Redis : es) a -> Eff es a
 runRedis conn = interpret $ \_ -> \case
   LiftRedis action -> liftIO $ R.runRedis conn action
